@@ -6,6 +6,9 @@
     <title>Kunsthalle AR Show!</title>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
      <style>
+        body {
+            transition: background-color 2s ease; /* Smooth transition for background color */
+        }
         model-viewer {
             width: 100%; /* 100% of the parent's width */
             height: 80vh; /* 80% of the viewport height */
@@ -42,20 +45,18 @@
 
         document.addEventListener('DOMContentLoaded', checkARCoreCompatibility);
 
-        function getRandomColor() {
-            const letters = '0123456789ABCDEF';
-            let color = '#';
-            for (let i = 0; i < 6; i++) {
-                color += letters[Math.floor(Math.random() * 16)];
-            }
-            return color;
+        function getRandomPastelColor() {
+            const r = Math.floor((Math.random() * 127) + 127); // Random value between 127 and 254
+            const g = Math.floor((Math.random() * 127) + 127);
+            const b = Math.floor((Math.random() * 127) + 127);
+            return `rgb(${r}, ${g}, ${b})`;
         }
 
         function changeBackgroundColor() {
-            document.body.style.backgroundColor = getRandomColor();
+            document.body.style.backgroundColor = getRandomPastelColor();
         }
 
-        setInterval(changeBackgroundColor, 1000); 
+        setInterval(changeBackgroundColor, 2000); // Change background color every 2 seconds
     </script>
   </body>
 </html>
