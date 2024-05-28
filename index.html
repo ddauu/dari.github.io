@@ -15,8 +15,8 @@
     </style>
   </head>
   <body>
-<H2>Skulptur 111</H2>
-  <model-viewer 
+    <H2>Skulptur 111</H2>
+    <model-viewer 
                 id="model-viewer"
                 src="dark.glb"
                 ios-src="dark.usdz"
@@ -28,8 +28,8 @@
                 camera-controls
                 animation-name="CubeAction" 
                 animation-loop>  
-  </model-viewer>
- <script>
+    </model-viewer>
+    <script>
         async function checkARCoreCompatibility() {
             const modelViewer = document.getElementById('model-viewer');
             const isARCoreSupported = await navigator.xr.isSessionSupported('immersive-ar');
@@ -41,6 +41,21 @@
         }
 
         document.addEventListener('DOMContentLoaded', checkARCoreCompatibility);
+
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        function changeBackgroundColor() {
+            document.body.style.backgroundColor = getRandomColor();
+        }
+
+        setInterval(changeBackgroundColor, 1000); // Change background color every second
     </script>
-   </body>
+  </body>
 </html>
