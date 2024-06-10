@@ -16,17 +16,19 @@
             justify-content: space-between;
             align-items: center;
             color: white; /* Ensure text is visible on the background */
+            padding: 10px; /* Add padding to the body */
         }
         h1 {
-            font-size: 3em; /* Large font size */
-            margin: 20px 0; /* Margin at the top and bottom */
-            color: black
+            font-size: 2em; /* Large font size */
+            margin: 10px 0; /* Margin at the top and bottom */
+            text-align: center;
+          padding: 10px;
         }
         p {
-            font-size: 1.2em; /* Slightly larger than default */
+            font-size: 1em; /* Default font size */
             text-align: left;
-            margin: 20px; /* Margin at the bottom */
-            color: black
+            margin: 10px 0; /* Margin at the bottom */
+            padding: 10px;
         }
         model-viewer {
             width: 100%; /* 100% of the parent's width */
@@ -37,7 +39,7 @@
     </style>
   </head>
   <body>
-    <h1>From a plant to an art object.</h1>
+    <h1>from a plant to an art object</h1>
     <model-viewer 
                 id="model-viewer"
                 src="red.glb"
@@ -51,7 +53,7 @@
                 animation-name="CubeAction" 
                 animation-loop>  
     </model-viewer>
-    <p>Open a 3D-model and scale it whether you want to see a plant or an art object.<br>photo: Isa Gensken - Rose III in New York</p>
+    <p>open a 3D-model and scale it whether you want to see a plant or an art object.<br>photo: Isa Gensken - Rose III in New York</p>
     <script>
         async function checkARCoreCompatibility() {
             const modelViewer = document.getElementById('model-viewer');
