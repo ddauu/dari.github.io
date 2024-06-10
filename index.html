@@ -8,19 +8,34 @@
     <style>
         body {
             background: url('rose_3.jpg') no-repeat center center fixed; /* Background image */
-            background-size: cover; 
+            background-size: cover; /* Cover the entire background */
             height: 100vh; /* Ensure body takes full viewport height */
             margin: 0; /* Remove default margin */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            color: white; /* Ensure text is visible on the background */
+        }
+        h1 {
+            font-size: 3em; /* Large font size */
+            margin: 20px 0; /* Margin at the top and bottom */
+        }
+        p {
+            font-size: 1.2em; /* Slightly larger than default */
+            text-align: center;
+            margin: 20px; /* Margin at the bottom */
         }
         model-viewer {
             width: 100%; /* 100% of the parent's width */
-            height: 80vh; /* 80% of the viewport height */
+            height: 60vh; /* 60% of the viewport height */
             display: block;
             margin: auto;
         }
     </style>
   </head>
   <body>
+    <h1>from a plant to an art object</h1>
     <model-viewer 
                 id="model-viewer"
                 src="red.glb"
@@ -34,6 +49,7 @@
                 animation-name="CubeAction" 
                 animation-loop>  
     </model-viewer>
+    <p>open a 3D-model and scale it whether you want to see a plant or an art object.<br>photo: Isa Gensken - Rose III in New York</p>
     <script>
         async function checkARCoreCompatibility() {
             const modelViewer = document.getElementById('model-viewer');
