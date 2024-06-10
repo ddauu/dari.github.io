@@ -16,19 +16,19 @@
             justify-content: space-between;
             align-items: center;
             color: white; /* Ensure text is visible on the background */
+            overflow: hidden; /* Prevent scrolling */
             padding: 10px; /* Add padding to the body */
+            box-sizing: border-box; /* Ensure padding is included in the height calculation */
         }
         h1 {
             font-size: 2em; /* Large font size */
             margin: 10px 0; /* Margin at the top and bottom */
             text-align: center;
-          padding: 10px;
         }
         p {
             font-size: 1em; /* Default font size */
-            text-align: left;
+            text-align: center;
             margin: 10px 0; /* Margin at the bottom */
-            padding: 10px;
         }
         model-viewer {
             width: 100%; /* 100% of the parent's width */
